@@ -1,3 +1,6 @@
+## Test Paragraph
+This is a test to push my first commit.
+
 ## Repository for the course "Research on Corporate Transparency" Summer 2025
 
 This repository contains the code and data that we use throughout the course. Following how this repository grows over time should also give you an idea of how to structure an open science research project. The repository is organized in a way that allows us to easily reproduce the results and share the code with others.
