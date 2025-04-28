@@ -36,7 +36,8 @@ df <- raw_dta %>%
 avgs <- df %>%
 	group_by(period, tment) %>%
 	summarise(
-		mn_profits = mean(profits),
+	  # mn_profits = mean(profits),
+		mn_profits = median(profits),
 		lb_profits = mn_profits - 1.96*sd(profits)/sqrt(n()),
 		ub_profits = mn_profits + 1.96*sd(profits)/sqrt(n()),
 		.groups = "drop"
@@ -66,4 +67,26 @@ ggplot(avgs, aes(x = period, group = tment, color = tment)) +
 		panel.grid.major.x = element_blank()
 	)
 
+
+
 ggsave("output/acz2018_figure.pdf", width = 9, height = 6)
+
+
+
+
+# ------------------------------------------------------------------------------
+
+# Difference to the paper table, due to difference in differences.
+# The original table is a DiD table, takes difference for e.g. Finance group and subtracts the difference in the control group.
+# IN our case, it shifts the effect of Finance upwards, since the control group had a decrease. DiD assumes a parallel trend 
+# which gets broken when the treatment is implemented. The counter factual is the difference that would have happend to the 
+# treatment groups if the treatment would not have been introduced. The counter factual cannot be observed but need to be 
+# estimated by the model.
+
+# When using the median instead of the average the effect is even more pronounced.
+
+# ------------------------------------------------------------------------------
+
+
+
+
