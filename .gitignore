@@ -1,4 +1,27 @@
+<<<<<<< HEAD
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+=======
+# Local and project stuff
+.DS_Store
+config.env
+public/
+site/
+README_prep.md
+README.html
+
+# Python stuff
+__pycache__/
+.venv
+
+# R Stuff
+.Rproj.user
+*.Rproj
+.Rhistory
+.quarto
+/.vscode
+
+/.quarto/
+>>>>>>> upstream/main
